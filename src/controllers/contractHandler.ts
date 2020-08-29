@@ -15,6 +15,7 @@ export class ContractHandler {
         };
 
         try {
+            this._logger.info(`Attempting to invoke contract with storage ${storageMichelson}`);
             const result = await conseiljs.TezosNodeWriter.sendContractInvocationOperation(
                                     this._tezosConfig.nodeAddress, keystore, contractAddress,  
                                     0, 100000, '', 1000, 750000, undefined,

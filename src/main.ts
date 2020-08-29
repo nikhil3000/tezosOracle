@@ -13,7 +13,7 @@ const logger = createLogger({
 
 const endPointReader = new EndPointReader(logger);
 const contractHandler = new ContractHandler(logger, config.tezosConfig);
-const oracle = new Oracle(config.oracleConfig, config.oracleInterval, logger, endPointReader, contractHandler);
+const oracle = new Oracle(config.oracleConfig, config.oracleInterval, config.bettingPoolContract, logger, endPointReader, contractHandler);
 oracle.run();
 
 
